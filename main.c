@@ -83,7 +83,7 @@ int main(void){
             	int deli;
             	printf("검색할 배송법? ");
 	    	scanf("%d",&deli);
-            	//finddelivery(s,deli,index);
+            	finddelivery(s,deli,index);
 	    }
 	    else if(select == 4){
             	char expl[100];

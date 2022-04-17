@@ -78,7 +78,19 @@ void findprice(Product *s, int price , int count){
     printf("총 %d개의 주문이 있습니다.\n",cnt);
 
 }
-
+void finddelivery(Product *s, int deli , int count){
+    int cnt=0;
+    printf("이름 설명  무게  가격  배달방법\n");
+    printf("=========================\n");
+    for(int i=0; i<count; i++){
+        if((s[i].price > 0) && (s[i].delivery == deli)){
+            printf("%2d ",i+1);
+            readProduct(s[i]);
+            cnt++;
+        }
+    }
+    printf("총 %d개의 주문이 있습니다.\n",cnt);
+}
 
 void readProduct(Product s){
         printf("%5s %15s %4s %4d %5d\n",s.pname,s.explain,s.weight,s.price,s.delivery);
