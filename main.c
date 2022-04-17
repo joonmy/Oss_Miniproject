@@ -77,7 +77,7 @@ int main(void){
            	int pri;
             	printf("검색할 가격? ");
 	   	scanf("%d",&pri);
-            	//findprice(s,pri,index);
+            	findprice(s,pri,index);
 	    }
 	    else if(select == 3){
             	int deli;
