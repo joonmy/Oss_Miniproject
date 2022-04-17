@@ -14,6 +14,9 @@ typedef struct{
 int loadData(Product *s, FILE * fp);
 void saveData(Product *s, int count);
 void findname(Product *s, char *nm , int count);
+void findexplain(Product *s, char *explain , int count);
+void findprice(Product *s, int price , int count);
+void finddelivery(Product *s, int delivery , int count);
 void readProduct(Product s);
 void listProduct(Product *s, int count);
 int selectDataNo(Product *s, int count);

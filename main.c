@@ -58,11 +58,40 @@ int main(void){
 		saveData(s,index);
 	}
 	else if(menu == 6){
-            char nm[20];
-            printf("검색할 이름? ");
-            fgets(nm,20,stdin);
-	    nm[strlen(nm)-1]='\0';
-            findname(s,nm,index);
+	    int select;
+	    printf("1번: 이름\n");
+	    printf("2번: 가격\n");
+	    printf("3번: 배송법\n");
+	    printf("4번: 설명\n");
+	    printf("검색 옵션을 선택하세요 => ");
+	    scanf("%d",&select);
+	    getchar();
+	    if(select == 1){ 
+            	char nm[20];
+            	printf("검색할 이름? ");
+            	fgets(nm,20,stdin);
+	    	nm[strlen(nm)-1]='\0';
+            	findname(s,nm,index);
+	    }
+	    else if(select == 2){
+           	int pri;
+            	printf("검색할 가격? ");
+	   	scanf("%d",&pri);
+            	//findprice(s,pri,index);
+	    }
+	    else if(select == 3){
+            	int deli;
+            	printf("검색할 배송법? ");
+	    	scanf("%d",&deli);
+            	//finddelivery(s,deli,index);
+	    }
+	    else if(select == 4){
+            	char expl[100];
+            	printf("검색할 설명? ");
+            	fgets(expl,100,stdin);
+	    	expl[strlen(expl)-1]='\0';
+            	findexplain(s,expl,index);
+	    }
         }
     }
     printf("종료됨!\n");
