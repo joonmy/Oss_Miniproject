@@ -1,4 +1,19 @@
 #include "manager.h"
+void saveData(Product *s, int count){
+    FILE * fp;
+    fp = fopen("product.txt","w");
+    for(int i=0; i<count; i++){
+        if(s[i].price > 0){
+            if(i != count -1)
+                fprintf(fp,"%s %s %s %d %d\n",s[i].pname,s[i].explain,s[i].weight,s[i].price,s[i].delivery);
+            else
+                fprintf(fp,"%s %s %s %d %d",s[i].pname,s[i].explain,s[i].weight,s[i].price,s[i].delivery);
+        }
+    }
+    fclose(fp);
+    printf("=>저장됨!\n");
+}
+
 void findname(Product *s, char *nm , int count){
     int cnt=0;
     printf("이름 설명  무게  가격  배달방법\n");
@@ -15,11 +30,11 @@ void findname(Product *s, char *nm , int count){
 }
 
 void readProduct(Product s){
-        printf("%5s %4s %4s %4d %5d\n",s.pname,s.explain,s.weight,s.price,s.delivery);
+        printf("%5s %15s %4s %4d %5d\n",s.pname,s.explain,s.weight,s.price,s.delivery);
 }
 
 void listProduct(Product *s, int count){
-        printf("     이름 설명  무게  가격  배달방법\n");
+        printf("     이름      설명   무게   가격  배달방법\n");
         for(int i=0; i<count; i++){
                 if(s[i].price < 0){
 #ifdef DEBUG

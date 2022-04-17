@@ -46,6 +46,9 @@ int main(void){
 
             }
         }
+	else if(menu == 5){
+		saveData(s,index);
+	}
 	else if(menu == 6){
             char nm[20];
             printf("검색할 이름? ");
