@@ -35,7 +35,9 @@ void saveData(Product *s, int count){
     fclose(fp);
     printf("=>저장됨!\n");
 }
+
 void selectSearchMenu(Product *s, int index){
+	while(1){
 	    int select;
             printf("1번: 이름\n");
             printf("2번: 가격\n");
@@ -50,18 +52,21 @@ void selectSearchMenu(Product *s, int index){
                 fgets(nm,20,stdin);
                 nm[strlen(nm)-1]='\0';
                 findname(s,nm,index);
+		break;
             }
             else if(select == 2){
                 int pri;
                 printf("검색할 가격? ");
                 scanf("%d",&pri);
                 findprice(s,pri,index);
+		break;
             }
             else if(select == 3){
                 int deli;
                 printf("검색할 배송법? ");
                 scanf("%d",&deli);
                 finddelivery(s,deli,index);
+		break;
             }
             else if(select == 4){
                 char expl[100];
@@ -69,7 +74,12 @@ void selectSearchMenu(Product *s, int index){
                 fgets(expl,100,stdin);
                 expl[strlen(expl)-1]='\0';
                 findexplain(s,expl,index);
+		break;
             }
+	    else{
+	    	printf("다른 옵션을 선택해 주세요\n\n");
+	    }
+	}
 }
 
 void findname(Product *s, char *nm , int count){
