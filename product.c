@@ -50,6 +50,8 @@ int selectMenu(){
     	printf("2. 상품추가\n");
     	printf("3. 상품수정\n");
     	printf("4. 상품삭제\n");
+    	printf("5. 저장\n");
+    	printf("6. 검색\n");
     	printf("0. 종료\n\n");
     	printf("=> 원하는 메뉴를 입력하세요 -> ");
     	scanf("%d", &menu);

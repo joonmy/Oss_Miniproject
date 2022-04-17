@@ -11,6 +11,7 @@ typedef struct{
     int delivery;
 }Product;
 #endif
+void findname(Product *s, char *nm , int count);
 void readProduct(Product s);
 void listProduct(Product *s, int count);
 int selectDataNo(Product *s, int count);
