@@ -4,11 +4,11 @@
 #define CALC_DATA_H 
 
 typedef struct{
-    char pname[40];
-    char explain[100];
-    char weight[30];
-    int price;
-    int delivery;
+	char pname[40];
+	char explain[100];
+	char weight[30];
+	int price;
+	int delivery;
 }Product;
 #endif 
 int addProduct(Product *s); //product를 creat하는 함수
