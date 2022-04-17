@@ -19,4 +19,5 @@ void findprice(Product *s, int price , int count);
 void finddelivery(Product *s, int delivery , int count);
 void readProduct(Product s);
 void listProduct(Product *s, int count);
+void selectSearchMenu(Product *s, int index);
 int selectDataNo(Product *s, int count);
