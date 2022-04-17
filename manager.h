@@ -11,6 +11,7 @@ typedef struct{
     int delivery;
 }Product;
 #endif
+int loadData(Product *s, FILE * fp);
 void saveData(Product *s, int count);
 void findname(Product *s, char *nm , int count);
 void readProduct(Product s);

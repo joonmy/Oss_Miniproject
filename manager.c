@@ -1,14 +1,36 @@
 #include "manager.h"
+int loadData(Product *s, FILE * fp){
+    int i=0;
+    while(!feof(fp)){
+	fgets(s[i].pname,40,fp);
+	s[i].pname[strlen(s[i].pname)-1] = '\0';
+	fgets(s[i].explain,100,fp);
+	s[i].explain[strlen(s[i].explain)-1] = '\0';
+	fscanf(fp,"%s %d %d",s[i].weight,&s[i].price,&s[i].delivery);
+        fgetc(fp);
+	i++;
+    }
+    fclose(fp);
+    printf("=>로딩 성공\n");
+    return i;
+}
+
 void saveData(Product *s, int count){
     FILE * fp;
     fp = fopen("product.txt","w");
     for(int i=0; i<count; i++){
         if(s[i].price > 0){
-            if(i != count -1)
-                fprintf(fp,"%s %s %s %d %d\n",s[i].pname,s[i].explain,s[i].weight,s[i].price,s[i].delivery);
-            else
-                fprintf(fp,"%s %s %s %d %d",s[i].pname,s[i].explain,s[i].weight,s[i].price,s[i].delivery);
-        }
+            if(i != count -1){
+		fprintf(fp,"%s\n",s[i].pname);
+		fprintf(fp,"%s\n",s[i].explain);
+		fprintf(fp,"%s %d %d\n",s[i].weight,s[i].price,s[i].delivery);
+	    }
+            else{
+		fprintf(fp,"%s\n",s[i].pname);
+		fprintf(fp,"%s\n",s[i].explain);
+		fprintf(fp,"%s %d %d",s[i].weight,s[i].price,s[i].delivery);
+	    }
+	}
     }
     fclose(fp);
     printf("=>저장됨!\n");

@@ -3,7 +3,15 @@
 int main(void){
     Product s[100];
     int count = 0, index=0,menu;
-
+    FILE* fp;
+    fp = fopen("product.txt","r");
+    if(fp != NULL){
+        count = loadData(s,fp);
+        index = count;
+    }
+    else{
+        printf("=>파일 없음\n");
+    }
     while (1){
 #ifdef DEBUG
 	printf("\n[DEGUG] left space of array : %d\n",100-count);	
